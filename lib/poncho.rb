@@ -1,4 +1,5 @@
 require 'poncho/version'
+require 'multi_json'
 
 module Poncho
   autoload :Error, 'poncho/error'

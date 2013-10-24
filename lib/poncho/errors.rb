@@ -119,7 +119,7 @@ module Poncho
     end
 
     def to_json(*)
-      as_json.to_json
+      MultiJson.dump as_json
     end
 
     def to_hash

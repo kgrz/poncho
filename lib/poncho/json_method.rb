@@ -25,7 +25,7 @@ module Poncho
     def body(value = nil)
       if value && !json_content_type?
         content_type :json
-        value = value.to_json
+        value = MultiJson.dump value
       end
 
       super
@@ -33,7 +33,7 @@ module Poncho
 
     def json(value)
       content_type :json
-      body(value.to_json)
+      body(MultiJson.dump(value))
     end
 
     def json?
